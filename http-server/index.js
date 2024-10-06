@@ -26,15 +26,19 @@
     registrationContent = registration;
   });
 
-  function getPortFromArgs(defaultPort) {
+function getPortFromArgs(defaultPort) {
     const args = process.argv;
     const portIndex = args.indexOf("--port");
+  
     if (portIndex !== -1 && args[portIndex + 1]) {
       const port = parseInt(args[portIndex + 1], 10);
       if (!isNaN(port)) {
         return port;
+      } else {
+        console.log("Invalid port number ");
       }
     }
+  
     return defaultPort;
   }
   
