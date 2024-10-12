@@ -30,9 +30,9 @@ const todoList = () => {
       // as per the format given above.
       return list
       .map((todo) => {
-        const checkbox = todo.completed ? "[x]" : "[ ]"; 
-        const displayDate = (todo.dueDate === today) ? "" : todo.dueDate; 
-        return `${checkbox} ${todo.title} ${displayDate}`.trim(); 
+        const marked= todo.completed ? "[x]" : "[ ]"; 
+        const date = (todo.dueDate === today) ? "" : todo.dueDate; 
+        return `${marked} ${todo.title} ${date}`.trim(); 
       })
       .join("\n");
     }
